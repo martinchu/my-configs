@@ -1,1 +1,2 @@
-:noremap <Tab> gT
+:noremap <Tab> gt
+:noremap <S-Tab> gT
