@@ -1,2 +1,17 @@
+set number
+set relativenumber
+
+
 :noremap <Tab> gt
 :noremap <S-Tab> gT
+
+"  Move line up or down
+nnoremap <silent> <C-k>    :<C-U>exec "exec 'norm m`' \| move -" . (1+v:count1)<CR>``
+nnoremap <silent> <C-j>  :<C-U>exec "exec 'norm m`' \| move +" . (0+v:count1)<CR>``
+
+inoremap <silent> <C-k>    <C-O>m`<C-O>:move -2<CR><C-O>``
+inoremap <silent> <C-j>  <C-O>m`<C-O>:move +1<CR><C-O>``
+
+vnoremap <silent> <C-k>    :<C-U>exec "'<,'>move '<-" . (1+v:count1)<CR>gv
+vnoremap <silent> <C-j>  :<C-U>exec "'<,'>move '>+" . (0+v:count1)<CR>gv
+
