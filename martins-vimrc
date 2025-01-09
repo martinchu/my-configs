@@ -1,6 +1,13 @@
+let mapleader=" "
+
 set number
 set relativenumber
+set clipboard=unnamedplus
 
+Plug 'justinmk/vim-sneak'
+
+map f <Plug>Sneak_s
+map F <Plug>Sneak_S
 
 :noremap <Tab> gt
 :noremap <S-Tab> gT
@@ -15,3 +22,14 @@ inoremap <silent> <C-j>  <C-O>m`<C-O>:move +1<CR><C-O>``
 vnoremap <silent> <C-k>    :<C-U>exec "'<,'>move '<-" . (1+v:count1)<CR>gv
 vnoremap <silent> <C-j>  :<C-U>exec "'<,'>move '>+" . (0+v:count1)<CR>gv
 
+Plug 'machakann/vim-highlightedyank'
+
+Plug 'easymotion/vim-easymotion'
+
+map <leader><leader>w <Plug>(easymotion-w)
+nmap <leader>l <Plug>(easymotion-lineanywhere)
+
+Plug 'tpope/vim-surround'
+
+Plug 'preservim/nerdtree'
+nnoremap <C-1> :NERDTreeFind<CR>
